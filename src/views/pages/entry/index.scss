@@ -1,0 +1,53 @@
+.entry-view {
+    text-align: center;
+    padding-top: 20px;
+
+    &>.logo {
+        background-size: 70% auto;
+        height: 60px;
+        width: 60px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: inline-block;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    &>header {
+        font-weight: 800;
+        padding-top: 20px;
+
+        &>div {
+            font-size: 12px;
+            line-height: 2em;
+            font-weight: 200;
+        }
+    }
+
+    &>.btn-list {
+        margin-top: 20px;
+        width: 100%;
+
+        &>.btn {
+            color: #363737;
+            width: 70px;
+            line-height: 30px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 13px;
+            cursor: pointer;
+            margin: 0 5px;
+
+            &.link {
+                margin-left: 10px;
+                background-color: #dadbde;
+            }
+
+            &.open {
+                background-color: rgb(0, 87, 162);
+                color: white;
+            }
+        }
+    }
+
+}

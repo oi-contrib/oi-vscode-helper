@@ -1,0 +1,25 @@
+body {
+    padding: 20px;
+}
+
+.ip-view {
+    &>.btn {
+        width: 70px;
+        line-height: 30px;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 13px;
+        cursor: pointer;
+        background-color: rgb(0, 87, 162);
+        color: white;
+        outline: none;
+        border: none;
+    }
+    &>pre{
+        width:calc(100vw - 100px);
+        height: calc(100vh - 100px);
+        background-color: white;
+        color: black;
+        padding:10px;
+    }
+}

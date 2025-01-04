@@ -1,0 +1,63 @@
+{
+  "name": "oi-vscode-helper",
+  "displayName": "OI 小助手",
+  "description": "一个用于辅助日常工作的插件",
+  "version": "0.1.0",
+  "scripts": {
+    "install": "npm run copy:normalize && npm run copy:vislite",
+    "copy:normalize": "oipage-cli --copy ./node_modules/oipage/stylecss/normalize.css ./src/views/libs/normalize.css",
+    "copy:vislite": "oipage-cli --copy ./node_modules/vislite/lib/index.umd.min.js ./src/views/libs/vislite.js"
+  },
+  "publisher": "zxl20070701",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/OI.png",
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "oi-vscode-helper.appStore",
+        "title": "appStore"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "Helper",
+          "title": "OI 小助手",
+          "icon": "images/OI.png"
+        }
+      ]
+    },
+    "views": {
+      "Helper": [
+        {
+          "id": "oi-vscode-helper.entry",
+          "type":"webview",
+          "name": "欢迎使用"
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oi-contrib/oi-vscode-helper.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "zxl20070701"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.89.0"
+  },
+  "dependencies": {
+    "oipage": "^0.2.0",
+    "vislite": "^1.2.1"
+  }
+}

@@ -1,0 +1,46 @@
+body {
+    padding: 20px;
+}
+
+.tool-list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0 20px 20px 20px;
+
+    &>.title {
+        color: #6b7184;
+        font-size: 16px;
+        padding: 15px 0 10px 0;
+        border-bottom: 2px rgba(0, 0, 0, .02) solid;
+    }
+
+    &>ul {
+        font-size: 0;
+        margin-left: -20px;
+
+        &>li {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f6f6f6;
+            padding: 8px 8px;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &>img {
+                width: 30px;
+                height: 30px;
+            }
+
+            &>span {
+                margin-left: 5px;
+            }
+        }
+    }
+}
