@@ -1,5 +1,19 @@
 body {
     padding: 20px;
+
+    &.vscode-dark {
+        .ip-view>pre {
+            background-color: #181818;
+            color: #cccccc;
+        }
+    }
+
+    &.vscode-light {
+        .ip-view>pre {
+            background-color: white;
+            color: black;
+        }
+    }
 }
 
 .ip-view {
@@ -15,11 +29,10 @@ body {
         outline: none;
         border: none;
     }
-    &>pre{
-        width:calc(100vw - 100px);
+
+    &>pre {
+        width: calc(100vw - 100px);
         height: calc(100vh - 100px);
-        background-color: white;
-        color: black;
-        padding:10px;
+        padding: 10px;
     }
 }

@@ -51,3 +51,16 @@
     }
 
 }
+
+.calendar-view {
+    width: 100vw;
+    text-align: center;
+    overflow: auto;
+    margin: 20px 0;
+
+    &>.content {
+        display: inline-block;
+        width: 230px;
+        height: 300px;
+    }
+}

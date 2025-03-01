@@ -1,0 +1,1 @@
+require("fs").copyFileSync("源文件路径", "目标文件路径");

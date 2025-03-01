@@ -1,0 +1,1 @@
+require("fs").rmdirSync("文件夹路径");

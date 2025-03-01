@@ -1,11 +1,53 @@
 body {
     padding: 20px;
+
+    &.vscode-dark {
+        .tool-list {
+            background-color: #2b2b2b;
+        }
+
+        .tool-list>ul>li {
+            background-color: #1f1f1f;
+        }
+
+        .notes-view>textarea {
+            background-color: #181818;
+            border-color: #181818;
+            color: #cccccc;
+        }
+    }
+
+    &.vscode-light {
+        .tool-list {
+            background-color: white;
+        }
+
+        .tool-list>ul>li {
+            background-color: #f6f6f6;
+        }
+
+        .notes-view>textarea {
+            background-color: white;
+        }
+    }
+}
+
+.notes-view {
+    &>textarea {
+        width: 400px;
+        height: 300px;
+        resize: none;
+        background-color: white;
+        border-radius: 10px;
+        margin: 10px 10px 10px 0;
+        padding: 10px;
+    }
 }
 
 .tool-list {
-    background-color: white;
     border-radius: 10px;
     padding: 0 20px 20px 20px;
+    margin-bottom: 10px;
 
     &>.title {
         color: #6b7184;
@@ -21,7 +63,6 @@ body {
         &>li {
             display: inline-flex;
             align-items: center;
-            background-color: #f6f6f6;
             padding: 8px 8px;
             font-size: 14px;
             border-radius: 5px;

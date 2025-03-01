@@ -1,0 +1,11 @@
+.svg-view {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+
+    &>svg {
+        max-width: 500px;
+        max-height: 500px;
+    }
+}

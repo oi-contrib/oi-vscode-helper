@@ -1,0 +1,1 @@
+require("fs").readdirSync("文件夹路径");

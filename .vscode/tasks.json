@@ -1,0 +1,17 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "OI小助手开发模式",
+			"detail": "npm run dev"
+		}
+	]
+}

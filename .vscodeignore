@@ -9,3 +9,9 @@ vsc-extension-quickstart.md
 **/eslint.config.mjs
 **/.vscode-test.*
 .github
+scripts
+!scripts/codeSnippet/commands.json
+node_modules
+!node_modules/oipage/nodejs/**/*
+!node_modules/oipage/package.json
+*.vsix

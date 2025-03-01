@@ -36,7 +36,10 @@ module.exports = function (context, webview, pagename) {
 
 <body>
     ${templateCode}
-    <script>var vscode = acquireVsCodeApi();${scriptCode}</script>
+    <script>
+        var vscode = acquireVsCodeApi();
+        ${scriptCode}
+    </script>
 </body>
 
 </html>`;

@@ -1,5 +1,24 @@
 body {
     padding: 20px 0;
+
+    &.vscode-dark {
+        textarea {
+            background-color: #1f1f1f;
+            color: #cccccc;
+        }
+
+        .fan2jian-view>.input::after {
+            color: #fdfdfd;
+            background-color: #404040;
+        }
+    }
+
+    &.vscode-light {
+        textarea {
+            background-color: white;
+            color: black;
+        }
+    }
 }
 
 .fan2jian-view {
@@ -16,6 +35,7 @@ body {
             width: 100%;
             height: 100%;
             resize: none;
+            padding: 20px;
         }
 
         &::after {

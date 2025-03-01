@@ -5,3 +5,4 @@ node_modules
 *.vsix
 src/views/libs/**/*
 !*.gitkeep
+scripts/codeSnippet/commands.json

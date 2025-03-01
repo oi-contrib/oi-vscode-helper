@@ -1,0 +1,14 @@
+/**
+一共有四个区域，分别是：
+safe-area-inset-left：安全区域距离左边边界的距离
+safe-area-inset-right：安全区域距离右边边界的距离
+safe-area-inset-top：安全区域距离顶部边界的距离
+safe-area-inset-bottom ：安全距离底部边界的距离
+*/
+
+body {
+    /* 兼容 iOS < 11.2 */
+    padding-bottom: constant(safe-area-inset-bottom);
+    /* 兼容 iOS >= 11.2 */
+    padding-bottom: env(safe-area-inset-bottom);
+}

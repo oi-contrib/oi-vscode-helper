@@ -2,11 +2,12 @@
   "name": "oi-vscode-helper",
   "displayName": "OI 小助手",
   "description": "一个用于辅助日常工作的插件",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
-    "install": "npm run copy:normalize && npm run copy:vislite",
-    "copy:normalize": "oipage-cli --copy ./node_modules/oipage/stylecss/normalize.css ./src/views/libs/normalize.css",
-    "copy:vislite": "oipage-cli --copy ./node_modules/vislite/lib/index.umd.min.js ./src/views/libs/vislite.js"
+    "install": "node ./scripts/init.js",
+    "vscode:prepublish": "node ./scripts/build.js",
+    "dev": "node ./scripts/dev.js",
+    "build": "vsce package"
   },
   "publisher": "zxl20070701",
   "engines": {
@@ -22,14 +23,193 @@
     "commands": [
       {
         "command": "oi-vscode-helper.appStore",
-        "title": "appStore"
+        "title": "%vscode-helper.appStore%",
+        "icon": {
+          "light": "images/OI.png",
+          "dark": "images/OI.png"
+        }
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.css.iphone-safe-view",
+        "title": "iPhone中的安全显示区域"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.date.yy-mm-dd",
+        "title": "获取（今天）年月日"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.dom.after",
+        "title": "在被指定元素之前插入节点"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.dom.appendTo",
+        "title": "追加节点(内部结尾)"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.dom.before",
+        "title": "在被指定元素之后插入节点"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.dom.prependTo",
+        "title": "追加节点(内部开头)"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.javascript.dom.remove",
+        "title": "删除节点"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.copyFileSync",
+        "title": "复制文件（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.existsSync",
+        "title": "路径是否存在（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.isDirectory",
+        "title": "判断是不是文件夹（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.readdirSync",
+        "title": "读取孩子文件和文件夹（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.readFileSync",
+        "title": "读取文本（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.rmdirSync",
+        "title": "删除文件夹（同步）"
+      },
+      {
+        "command": "oi-vscode-helper.codeSnippet.nodejs.disk.unlinkSync",
+        "title": "删除文件（同步）"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "oi-vscode-helper.appStore",
+          "when": "view==oi-vscode-helper.entry",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "submenu": "oi-vscode-helper.codeSnippet",
+          "group": "navigation"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet": [
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.css"
+        },
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.javascript"
+        },
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.nodejs"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.css": [
+        {
+          "command": "oi-vscode-helper.codeSnippet.css.iphone-safe-view"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.javascript": [
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.javascript.date"
+        },
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.javascript.dom"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.javascript.date": [
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.date.yy-mm-dd"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.javascript.dom": [
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.dom.after"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.dom.appendTo"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.dom.before"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.dom.prependTo"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.javascript.dom.remove"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.nodejs": [
+        {
+          "submenu": "oi-vscode-helper.codeSnippet.nodejs.disk"
+        }
+      ],
+      "oi-vscode-helper.codeSnippet.nodejs.disk": [
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.copyFileSync"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.existsSync"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.isDirectory"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.readdirSync"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.readFileSync"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.rmdirSync"
+        },
+        {
+          "command": "oi-vscode-helper.codeSnippet.nodejs.disk.unlinkSync"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "oi-vscode-helper.codeSnippet",
+        "label": "%vscode-helper.title%"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.css",
+        "label": "CSS"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.javascript",
+        "label": "JavaScript"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.javascript.date",
+        "label": "日期&时间"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.javascript.dom",
+        "label": "DOM操作"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.nodejs",
+        "label": "Node.js"
+      },
+      {
+        "id": "oi-vscode-helper.codeSnippet.nodejs.disk",
+        "label": "磁盘操作"
       }
     ],
     "viewsContainers": {
       "activitybar": [
         {
           "id": "Helper",
-          "title": "OI 小助手",
+          "title": "%vscode-helper.title%",
           "icon": "images/OI.png"
         }
       ]
@@ -38,11 +218,23 @@
       "Helper": [
         {
           "id": "oi-vscode-helper.entry",
-          "type":"webview",
-          "name": "欢迎使用"
+          "type": "webview",
+          "name": "%vscode-helper.welcome%"
         }
       ]
-    }
+    },
+    "customEditors": [
+      {
+        "viewType": "oi-vscode-helper.svgeditor",
+        "displayName": "%vscode-helper.editor.svg%",
+        "selector": [
+          {
+            "filenamePattern": "*.svg"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
   },
   "repository": {
     "type": "git",

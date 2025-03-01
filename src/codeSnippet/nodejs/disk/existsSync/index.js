@@ -1,0 +1,1 @@
+const result = require("fs").existsSync("路径");

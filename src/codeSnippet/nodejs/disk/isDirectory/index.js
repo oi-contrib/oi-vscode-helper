@@ -1,0 +1,1 @@
+const result = require("fs").lstatSync("路径").isDirectory();
